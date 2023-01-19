@@ -34,6 +34,10 @@ def halmahasiswa():
 def bs():
     return render_template('bs.html')
 
+@app.route('/tabel')
+def tabel():
+    return render_template('tabel.html')
+
 @app.route('/login', methods=['GET','POST'])
 def login():
     if request.method == 'POST':
