@@ -30,6 +30,10 @@ def halmahasiswa():
     kelas = '4KA14'
     return render_template('mhs.html',kelas=kelas)
 
+@app.route('/bootstrap')
+def bs():
+    return render_template('bs.html')
+
 @app.route('/login', methods=['GET','POST'])
 def login():
     if request.method == 'POST':
