@@ -38,10 +38,8 @@ def bs():
 def tabel():
     return render_template('tabel.html')
 
-@app.route('/login', methods=['GET','POST'])
+@app.route('/login')
 def login():
-    if request.method == 'POST':
-        return redirect(url_for('dosen'))
     return render_template('login.html')
 
 @app.route('/dosen')
