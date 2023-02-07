@@ -44,8 +44,11 @@ def login():
 
 @app.route('/dosen')
 def haldosen():
-    alamat = ['Depok','Jakarta','Bogor','Kemang']
-    return render_template('dosen.html', alamat=alamat)
+    cursor = mysql.connection.cursor()
+    cursor.execute(''' SELECT * FROM DOSEN''')
+    dosen = cursor.fetchall()
+    cursor.close()
+    return render_template('dosen.html', dosen=dosen)
 
 
 if __name__ == '__main__':
